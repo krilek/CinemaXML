@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="pracownik">
+        <xsd:complexType>
+        <xsd:sequence>
+                <xsd:element name="imie" type="xsd:string"/>
+                <xsd:element name="nazwisko" type="xsd:string"/>
+                <xsd:element name="wiek" type="xsd:short"/>
+                <xsd:element name="data_urodzenia" type="xsd:date"/>
+                <xsd:element name="pensja" type="xsd:float"/>
+        </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
