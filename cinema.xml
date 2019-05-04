@@ -1,10 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE kino SYSTEM "cinema.dtd">
+<?xml-stylesheet type="text/css" href="cinema.css" ?> 
 <kino>
     <filmy>
         <film id="1">
             <tytul>Kill Bill</tytul>
-            <rezyser>Quentin Tarantino</rezyser>
+            <rezyser>
+                <osoba plec="m">
+                    <imie>Quentin</imie>
+                    <nazwisko>Tarantino</nazwisko>
+                </osoba>
+            </rezyser>
             <dlugosc>111</dlugosc>
             <opis>Płatna zabójczyni zwana Czarną Mambą po czterech latach wybudza się ze śpiączki z zamiarem krwawej zemsty na ludziach, którzy próbowali ją zabić.</opis>
             <ocena>7.4</ocena>
@@ -16,7 +22,12 @@
         </film>
         <film id="2">
             <tytul>Pulp Fiction</tytul>
-            <rezyser>Quentin Tarantino</rezyser>
+            <rezyser>
+                <osoba plec="m">
+                    <imie>Quentin</imie>
+                    <nazwisko>Tarantino</nazwisko>
+                </osoba>
+            </rezyser>
             <dlugosc>154</dlugosc>
             <opis>Przemoc i odkupienie w opowieści o dwóch płatnych mordercach pracujących na zlecenie mafii, żonie gangstera, bokserze i parze okradającej ludzi w restauracji.</opis>
             <ocena>8.3</ocena>
@@ -28,7 +39,12 @@
         </film>
         <film id="3">
             <tytul eng="The Shining">Lśnienie</tytul>
-            <rezyser>Stanley Kubrick</rezyser>
+            <rezyser>
+                <osoba plec="m">
+                    <imie>Stanley</imie>
+                    <nazwisko>Kubrick</nazwisko>
+                </osoba>
+            </rezyser>
             <dlugosc>156</dlugosc>
             <opis>Jack podejmuje pracę stróża odciętego od świata hotelu Overlook. Wkrótce idylla zamienia się w koszmar.</opis>
             <ocena>7.8</ocena>
@@ -40,7 +56,12 @@
         </film>
         <film id="3">
             <tytul eng="A Clockwork Orange">Mechaniczna pomarańcza</tytul>
-            <rezyser>Stanley Kubrick</rezyser>
+            <rezyser>
+                <osoba plec="m">
+                    <imie>Stanley</imie>
+                    <nazwisko>Kubrick</nazwisko>
+                </osoba>
+            </rezyser>
             <dlugosc>136</dlugosc>
             <opis>Alex DeLarge wraz ze swoim gangiem sieje spustoszenie na ulicach. Kiedy trafia do więzienia, otrzymuje propozycję odmiany swojego życia.</opis>
             <ocena>7.9</ocena>
@@ -52,7 +73,12 @@
         </film>
         <film id="4">
             <tytul eng="Inglourious Basterds">Bękarty wojny</tytul>
-            <rezyser>Quentin Tarantino</rezyser>
+            <rezyser>
+                <osoba plec="m">
+                    <imie>Quentin</imie>
+                    <nazwisko>Tarantino</nazwisko>
+                </osoba>
+            </rezyser>
             <dlugosc>153</dlugosc>
             <opis>W okupowanej przez nazistów Francji oddział złożony z Amerykanów żydowskiego pochodzenia planuje zamach na Hitlera.</opis>
             <ocena>8.0</ocena>
@@ -99,7 +125,7 @@
             </osoba>
             <dane>
                 <login>zhoppe</login>
-                <haslo>hoppe1</haslo>
+                <haslo>okon1</haslo>
             </dane>
         </pracownik>
     </pracownicy>
@@ -485,7 +511,7 @@
                 </siedzenie>
             </siedzenia>
         </sala>
-        <sala id="3">
+        <sala id="4">
             <nazwa>Sala 4</nazwa>
             <typ>9D</typ>
             <liczba_miejsc>8</liczba_miejsc>
@@ -524,7 +550,7 @@
                 </siedzenie>
             </siedzenia>
         </sala>
-        <sala id="4">
+        <sala id="5">
             <nazwa>Sala 5</nazwa>
             <typ>2D</typ>
             <liczba_miejsc>45</liczba_miejsc>
@@ -711,7 +737,7 @@
                 </siedzenie>
             </siedzenia>
         </sala>
-        <sala id="5">
+        <sala id="6">
             <nazwa>Sala 6</nazwa>
             <typ>2D</typ>
             <liczba_miejsc>40</liczba_miejsc>
@@ -905,7 +931,7 @@
             <sala>4</sala>
             <start_pokazu>2002-05-17T09:00:00</start_pokazu>
         </seans>
-                <seans id="6">
+        <seans id="6">
             <film>1</film>
             <sala>1</sala>
             <start_pokazu>2002-05-30T09:00:00</start_pokazu>
@@ -933,85 +959,85 @@
     </seanse>
     <rezerwacje>
         <rezerwacja>
-            <seans>2<seans>
-            <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
-            <typ_rezerwacji>osobista</typ_rezerwacji>
-            <kontakt>
-                <osoba plec="m">
-                    <imie>Adam</imie>
-                    <nazwisko>Nowak</nazwisko>
-                </osoba>
-                <numer_telefonu>321232432</numer_telefonu>
-            </kontakt>
-            <zarezerwowane_siedzenia>
-                <siedzenie>
-                    <rzad>1</rzad>
-                    <numer_siedzenia>1</numer_siedzenia>
-                </siedzenie>
-                <siedzenie>
-                    <rzad>1</rzad>
-                    <numer_siedzenia>2</numer_siedzenia>
-                </siedzenie>
-                <siedzenie>
-                    <rzad>1</rzad>
-                    <numer_siedzenia>3</numer_siedzenia>
-                </siedzenie>
-            </zarezerwowane_siedzenia>
-            <oplacono>true</oplacono>
-        </rezerwacja>
-        <rezerwacja>
-            <seans>3<seans>
-            <odbierajacy_rezerwacje>2</odbierajacy_rezerwacje>
-            <typ_rezerwacji>telefoniczna</typ_rezerwacji>
-            <kontakt>
-                <osoba plec="m">
-                    <imie>Piotr</imie>
-                    <nazwisko>Frąćżęśi</nazwisko>
-                </osoba>
-                <numer_telefonu>432543324</numer_telefonu>
-            </kontakt>
-            <zarezerwowane_siedzenia>
-                <siedzenie>
-                    <rzad>2</rzad>
-                    <numer_siedzenia>8</numer_siedzenia>
-                </siedzenie>
-                <siedzenie>
-                    <rzad>2</rzad>
-                    <numer_siedzenia>9</numer_siedzenia>
-                </siedzenie>
-                <siedzenie>
-                    <rzad>2</rzad>
-                    <numer_siedzenia>10</numer_siedzenia>
-                </siedzenie>
-            </zarezerwowane_siedzenia>
-            <oplacono>false</oplacono>
-        </rezerwacja>
-        <rezerwacja>
-            <seans>4<seans>
-            <odbierajacy_rezerwacje>3</odbierajacy_rezerwacje>
-            <typ_rezerwacji>telefoniczna</typ_rezerwacji>
-            <kontakt>
-                <osoba plec="k">
-                    <imie>Anna</imie>
-                    <nazwisko>Wesołowska</nazwisko>
-                </osoba>
-                <numer_telefonu>432543324</numer_telefonu>
-            </kontakt>
-            <zarezerwowane_siedzenia>
-                <siedzenie>
-                    <rzad>2</rzad>
-                    <numer_siedzenia>8</numer_siedzenia>
-                </siedzenie>
-                <siedzenie>
-                    <rzad>2</rzad>
-                    <numer_siedzenia>9</numer_siedzenia>
-                </siedzenie>
-                <siedzenie>
-                    <rzad>2</rzad>
-                    <numer_siedzenia>10</numer_siedzenia>
-                </siedzenie>
-            </zarezerwowane_siedzenia>
-            <oplacono>false</oplacono>
-        </rezerwacja>
-    </rezerwacje>
-</kino>
+            <seans>2</seans>
+                <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
+                <typ_rezerwacji>osobista</typ_rezerwacji>
+                <kontakt>
+                    <osoba plec="m">
+                        <imie>Adam</imie>
+                        <nazwisko>Nowak</nazwisko>
+                    </osoba>
+                    <numer_telefonu>321232432</numer_telefonu>
+                </kontakt>
+                <zarezerwowane_siedzenia>
+                    <siedzenie>
+                        <rzad>1</rzad>
+                        <numer_siedzenia>1</numer_siedzenia>
+                    </siedzenie>
+                    <siedzenie>
+                        <rzad>1</rzad>
+                        <numer_siedzenia>2</numer_siedzenia>
+                    </siedzenie>
+                    <siedzenie>
+                        <rzad>1</rzad>
+                        <numer_siedzenia>3</numer_siedzenia>
+                    </siedzenie>
+                </zarezerwowane_siedzenia>
+                <oplacono>true</oplacono>
+            </rezerwacja>
+            <rezerwacja>
+                <seans>3</seans>
+                    <odbierajacy_rezerwacje>2</odbierajacy_rezerwacje>
+                    <typ_rezerwacji>telefoniczna</typ_rezerwacji>
+                    <kontakt>
+                        <osoba plec="m">
+                            <imie>Piotr</imie>
+                            <nazwisko>Frąćżęśi</nazwisko>
+                        </osoba>
+                        <numer_telefonu>432543324</numer_telefonu>
+                    </kontakt>
+                    <zarezerwowane_siedzenia>
+                        <siedzenie>
+                            <rzad>2</rzad>
+                            <numer_siedzenia>8</numer_siedzenia>
+                        </siedzenie>
+                        <siedzenie>
+                            <rzad>2</rzad>
+                            <numer_siedzenia>9</numer_siedzenia>
+                        </siedzenie>
+                        <siedzenie>
+                            <rzad>2</rzad>
+                            <numer_siedzenia>10</numer_siedzenia>
+                        </siedzenie>
+                    </zarezerwowane_siedzenia>
+                    <oplacono>false</oplacono>
+                </rezerwacja>
+                <rezerwacja>
+                    <seans>4</seans>
+                        <odbierajacy_rezerwacje>3</odbierajacy_rezerwacje>
+                        <typ_rezerwacji>internetowa</typ_rezerwacji>
+                        <kontakt>
+                            <osoba plec="k">
+                                <imie>Anna</imie>
+                                <nazwisko>Wesołowska</nazwisko>
+                            </osoba>
+                            <mail>awesolowska@gmail.com</mail>
+                        </kontakt>
+                        <zarezerwowane_siedzenia>
+                            <siedzenie>
+                                <rzad>2</rzad>
+                                <numer_siedzenia>8</numer_siedzenia>
+                            </siedzenie>
+                            <siedzenie>
+                                <rzad>2</rzad>
+                                <numer_siedzenia>9</numer_siedzenia>
+                            </siedzenie>
+                            <siedzenie>
+                                <rzad>2</rzad>
+                                <numer_siedzenia>10</numer_siedzenia>
+                            </siedzenie>
+                        </zarezerwowane_siedzenia>
+                        <oplacono>false</oplacono>
+                    </rezerwacja>
+                </rezerwacje>
+            </kino>

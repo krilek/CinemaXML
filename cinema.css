@@ -1,0 +1,191 @@
+kino>*{
+	font-family: Verdana, Arial;
+    display: block;
+    padding: 10px;
+}
+kino>*>*{
+    display: inline-block;
+    padding: 10px;
+}
+kino>*::before{
+    font-size: 18pt;
+    font-weight: bold;
+    display:block;
+}
+
+*::before{
+    font-size: 7pt;
+}
+*::after{
+    font-size: 7pt;
+}
+filmy::before{
+    content: "Dostępne filmy: ";
+
+}
+filmy film{
+    width:250px;
+    border: 1px;
+    border-style: solid;
+    margin: 5px;
+}
+filmy film>*{
+    display:block;
+}
+film tytul{
+    font-size: 15pt;
+    font-weight: bold;
+}
+film rezyser::before{
+    content: "Reżyser: ";
+}
+film dlugosc::before{
+    content: "Dlugość filmu: ";
+}
+film dlugosc::after{
+    content: "min";
+}
+film opis::before{
+    content: "Opis filmu: ";
+}
+film ocena::before{
+    content: "Ocena: ";
+}
+film data_premiery::before{
+    content: "Data premiery: ";
+}
+film ograniczenie_wiekowe::before{
+    content: "Dozwolone od lat: ";
+}
+film gatunki{
+    display: none;
+}
+gatunki{
+    display: none;
+}
+pracownicy::before{
+    content: "Pracownicy i ich dane";
+}
+pracownicy pracownik{
+    border: 1px;
+    border-style: solid;
+}
+pracownicy pracownik>*{
+    display:block;
+}
+dane login::before{
+    content: "Login:";
+}
+dane haslo::before{
+    content: "Haslo:";
+}
+dane>*{
+    display: block;
+}
+osoba{
+    background: ghostwhite;
+    display: inline-block;
+}
+osoba[plec="m"]{
+    background: lightblue;
+}
+osoba[plec="k"]{
+    background: lightcoral;
+}
+sale_filmowe::before{
+    content: "Sale filmowe: ";
+}
+siedzenia{
+    font-family: monospace;
+}
+sala>*{
+    display: block;
+}
+siedzenie>rzad{
+    display: none;
+}
+siedzenia{
+    width: 13em;
+}
+sala[id="1"] siedzenia{
+    width: 7em;
+}
+sala[id="3"] siedzenia{
+    width: 6em;
+}
+sala[id="4"] siedzenia{
+    width: 5em;
+}
+sala nazwa{
+    font-size: 18pt;
+    font-weight: bold;
+    display:block;
+}
+sala typ::before{
+    content: "Typ sali: ";
+}
+sala liczba_miejsc::before{
+    content: "Ilość miejsc: ";
+}
+sala siedzenia::before{
+    content: "Układ miejsc: ";
+    font-family: Verdana, Arial;
+    display: block;
+}
+seanse::before{
+    content: "Nadchodzące seanse: ";
+}
+seans start_pokazu::before{
+    content: "Data pokazu: ";
+}
+seans film{
+    display: none;
+}
+seans sala{
+    display: none;
+}
+rezerwacje::before{
+    content: "Złożone rezerwacje: ";
+}
+rezerwacja seans{
+    display: none;
+}
+rezerwacja odbierajacy_rezerwacje{
+    display: none;
+}
+typ_rezerwacji::before{
+    content: "Typ rezerwacji: ";
+}
+rezerwacja{
+    width: 200px;
+}
+rezerwacja>*{
+    display: block;
+}
+mail::before{
+    content: "Email: ";
+}
+numer_telefonu::before{
+    content: "Numer telefonu: ";
+}
+kontakt::before{
+    content: "Osoba rezerwująca: ";
+}
+kontakt osoba{
+    display: block;
+}
+zarezerwowane_siedzenia siedzenie{
+    display: block;
+}
+zarezerwowane_siedzenia rzad{
+    display: inline;
+}
+zarezerwowane_siedzenia rzad::before{
+    content: "Rząd: ";
+}
+zarezerwowane_siedzenia numer_siedzenia::before{
+    content: "Numer siedzenia: ";
+}
+oplacono::before{
+    content: "Czy opłacono?: ";
+}
