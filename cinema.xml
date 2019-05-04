@@ -2,7 +2,7 @@
 <!DOCTYPE kino SYSTEM "cinema.dtd">
 <kino>
     <filmy>
-        <film>
+        <film id="1">
             <tytul>Kill Bill</tytul>
             <rezyser>Quentin Tarantino</rezyser>
             <dlugosc>111</dlugosc>
@@ -14,7 +14,7 @@
                 <gatunek>1</gatunek>
             </gatunki>
         </film>
-        <film>
+        <film id="2">
             <tytul>Pulp Fiction</tytul>
             <rezyser>Quentin Tarantino</rezyser>
             <dlugosc>154</dlugosc>
@@ -26,7 +26,7 @@
                 <gatunek>2</gatunek>
             </gatunki>
         </film>
-        <film>
+        <film id="3">
             <tytul eng="The Shining">Lśnienie</tytul>
             <rezyser>Stanley Kubrick</rezyser>
             <dlugosc>156</dlugosc>
@@ -38,7 +38,7 @@
                 <gatunek>6</gatunek>
             </gatunki>
         </film>
-        <film>
+        <film id="3">
             <tytul eng="A Clockwork Orange">Mechaniczna pomarańcza</tytul>
             <rezyser>Stanley Kubrick</rezyser>
             <dlugosc>136</dlugosc>
@@ -50,7 +50,7 @@
                 <gatunek>5</gatunek>
             </gatunki>
         </film>
-        <film>
+        <film id="4">
             <tytul eng="Inglourious Basterds">Bękarty wojny</tytul>
             <rezyser>Quentin Tarantino</rezyser>
             <dlugosc>153</dlugosc>
@@ -72,7 +72,7 @@
         <gatunek id="6">Horror</gatunek>
     </gatunki>
     <pracownicy>
-        <pracownik>
+        <pracownik id="1">
             <osoba plec="m">
                 <imie>Adam</imie>
                 <nazwisko>Kowalski</nazwisko>
@@ -82,7 +82,7 @@
                 <haslo>haslo1</haslo>
             </dane>
         </pracownik>
-        <pracownik>
+        <pracownik id="2">
             <osoba plec="m">
                 <imie>Zdzislaw</imie>
                 <nazwisko>Kowalski</nazwisko>
@@ -92,7 +92,7 @@
                 <haslo>hasl1</haslo>
             </dane>
         </pracownik>
-        <pracownik>
+        <pracownik id="3">
             <osoba plec="k">
                 <imie>Anna</imie>
                 <nazwisko>Hoppe</nazwisko>
@@ -879,4 +879,139 @@
             </siedzenia>
         </sala>
     </sale_filmowe>
+    <seanse>
+        <seans id="1">
+            <film>1</film>
+            <sala>1</sala>
+            <start_pokazu>2002-05-30T09:00:00</start_pokazu>
+        </seans>
+        <seans id="2">
+            <film>1</film>
+            <sala>2</sala>
+            <start_pokazu>2002-05-21T09:00:00</start_pokazu>
+        </seans>
+        <seans id="3">
+            <film>2</film>
+            <sala>5</sala>
+            <start_pokazu>2002-05-22T09:00:00</start_pokazu>
+        </seans>
+        <seans id="4">
+            <film>3</film>
+            <sala>6</sala>
+            <start_pokazu>2002-05-25T09:00:00</start_pokazu>
+        </seans>
+        <seans id="5">
+            <film>4</film>
+            <sala>4</sala>
+            <start_pokazu>2002-05-17T09:00:00</start_pokazu>
+        </seans>
+                <seans id="6">
+            <film>1</film>
+            <sala>1</sala>
+            <start_pokazu>2002-05-30T09:00:00</start_pokazu>
+        </seans>
+        <seans id="7">
+            <film>1</film>
+            <sala>3</sala>
+            <start_pokazu>2002-05-21T19:00:00</start_pokazu>
+        </seans>
+        <seans id="8">
+            <film>2</film>
+            <sala>3</sala>
+            <start_pokazu>2002-05-22T09:00:00</start_pokazu>
+        </seans>
+        <seans id="9">
+            <film>1</film>
+            <sala>4</sala>
+            <start_pokazu>2001-01-25T18:00:00</start_pokazu>
+        </seans>
+        <seans id="10">
+            <film>2</film>
+            <sala>5</sala>
+            <start_pokazu>2003-03-17T09:00:00</start_pokazu>
+        </seans>
+    </seanse>
+    <rezerwacje>
+        <rezerwacja>
+            <seans>2<seans>
+            <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
+            <typ_rezerwacji>osobista</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="m">
+                    <imie>Adam</imie>
+                    <nazwisko>Nowak</nazwisko>
+                </osoba>
+                <numer_telefonu>321232432</numer_telefonu>
+            </kontakt>
+            <zarezerwowane_siedzenia>
+                <siedzenie>
+                    <rzad>1</rzad>
+                    <numer_siedzenia>1</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>1</rzad>
+                    <numer_siedzenia>2</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>1</rzad>
+                    <numer_siedzenia>3</numer_siedzenia>
+                </siedzenie>
+            </zarezerwowane_siedzenia>
+            <oplacono>true</oplacono>
+        </rezerwacja>
+        <rezerwacja>
+            <seans>3<seans>
+            <odbierajacy_rezerwacje>2</odbierajacy_rezerwacje>
+            <typ_rezerwacji>telefoniczna</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="m">
+                    <imie>Piotr</imie>
+                    <nazwisko>Frąćżęśi</nazwisko>
+                </osoba>
+                <numer_telefonu>432543324</numer_telefonu>
+            </kontakt>
+            <zarezerwowane_siedzenia>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>8</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>9</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>10</numer_siedzenia>
+                </siedzenie>
+            </zarezerwowane_siedzenia>
+            <oplacono>false</oplacono>
+        </rezerwacja>
+        <rezerwacja>
+            <seans>4<seans>
+            <odbierajacy_rezerwacje>3</odbierajacy_rezerwacje>
+            <typ_rezerwacji>telefoniczna</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="k">
+                    <imie>Anna</imie>
+                    <nazwisko>Wesołowska</nazwisko>
+                </osoba>
+                <numer_telefonu>432543324</numer_telefonu>
+            </kontakt>
+            <zarezerwowane_siedzenia>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>8</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>9</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>10</numer_siedzenia>
+                </siedzenie>
+            </zarezerwowane_siedzenia>
+            <oplacono>false</oplacono>
+        </rezerwacja>
+    </rezerwacje>
 </kino>
