@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!ELEMENT kino>
+<!ELEMENT kino (#PCDATA) >
 
 <!-- <!ELEMENT kino (unikatowy1+, unikatowy2+, pobrany+)> -->
 <!-- <!ELEMENT unikatowy1 (#PCDATA)>
