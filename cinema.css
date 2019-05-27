@@ -86,10 +86,10 @@ osoba{
     background: ghostwhite;
     display: inline-block;
 }
-osoba[plec="m"]{
+osoba[plec="m"]:hover{
     background: lightblue;
 }
-osoba[plec="k"]{
+osoba[plec="k"]:hover{
     background: lightcoral;
 }
 sale_filmowe::before{

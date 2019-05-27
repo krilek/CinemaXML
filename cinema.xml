@@ -1,6 +1,61 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE kino SYSTEM "cinema.dtd">
-<?xml-stylesheet type="text/css" href="cinema.css" ?> 
+<!DOCTYPE kino [
+        <!ELEMENT kino (filmy|gatunki|pracownicy|sale_filmowe|seanse|rezerwacje)*>
+        <!ELEMENT filmy (film)*>
+        <!ELEMENT film (tytul|rezyser|dlugosc|opis|ocena|data_premiery|ograniczenie_wiekowe|gatunki)*>
+        <!ATTLIST film
+                id CDATA #IMPLIED>
+        <!ELEMENT tytul (#PCDATA)>
+        <!ATTLIST tytul
+                eng CDATA #IMPLIED>
+        <!ELEMENT rezyser (osoba)*>
+        <!ELEMENT osoba (imie|nazwisko)*>
+        <!ATTLIST osoba
+                plec CDATA #REQUIRED>
+        <!ELEMENT imie (#PCDATA)>
+        <!ELEMENT nazwisko (#PCDATA)>
+        <!ELEMENT dlugosc (#PCDATA)>
+        <!ELEMENT opis (#PCDATA)>
+        <!ELEMENT ocena (#PCDATA)>
+        <!ELEMENT data_premiery (#PCDATA)>
+        <!ELEMENT ograniczenie_wiekowe (#PCDATA)>
+        <!ELEMENT gatunki (gatunek)*>
+        <!ELEMENT gatunek (#PCDATA)>
+        <!ATTLIST gatunek
+                id CDATA #IMPLIED>
+        <!ELEMENT pracownicy (pracownik)*>
+        <!ELEMENT pracownik (osoba|dane)*>
+        <!ATTLIST pracownik
+                id CDATA #REQUIRED>
+        <!ELEMENT dane (login|haslo)*>
+        <!ELEMENT login (#PCDATA)>
+        <!ELEMENT haslo (#PCDATA)>
+        <!ELEMENT sale_filmowe (sala)*>
+        <!ELEMENT sala (nazwa|typ|liczba_miejsc|siedzenia)*>
+        <!ATTLIST sala
+                id CDATA #IMPLIED>
+        <!ELEMENT nazwa (#PCDATA)>
+        <!ELEMENT typ (#PCDATA)>
+        <!ELEMENT liczba_miejsc (#PCDATA)>
+        <!ELEMENT siedzenia (siedzenie)*>
+        <!ELEMENT siedzenie (rzad|numer_siedzenia)*>
+        <!ELEMENT rzad (#PCDATA)>
+        <!ELEMENT numer_siedzenia (#PCDATA)>
+        <!ELEMENT seanse (seans)*>
+        <!ELEMENT seans (film|sala|start_pokazu)*>
+        <!ATTLIST seans
+                id CDATA #IMPLIED>
+        <!ELEMENT start_pokazu (#PCDATA)>
+        <!ELEMENT rezerwacje (rezerwacja)*>
+        <!ELEMENT rezerwacja (seans|odbierajacy_rezerwacje|typ_rezerwacji|kontakt|zarezerwowane_siedzenia|oplacono)*>
+        <!ELEMENT odbierajacy_rezerwacje (#PCDATA)>
+        <!ELEMENT typ_rezerwacji (#PCDATA)>
+        <!ELEMENT kontakt (osoba|numer_telefonu|mail)*>
+        <!ELEMENT numer_telefonu (#PCDATA)>
+        <!ELEMENT zarezerwowane_siedzenia (siedzenie)*>
+        <!ELEMENT oplacono (#PCDATA)>
+        <!ELEMENT mail (#PCDATA)>
+        ]>
 <kino>
     <filmy>
         <film id="1">
@@ -960,84 +1015,84 @@
     <rezerwacje>
         <rezerwacja>
             <seans>2</seans>
-                <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
-                <typ_rezerwacji>osobista</typ_rezerwacji>
-                <kontakt>
-                    <osoba plec="m">
-                        <imie>Adam</imie>
-                        <nazwisko>Nowak</nazwisko>
-                    </osoba>
-                    <numer_telefonu>321232432</numer_telefonu>
-                </kontakt>
-                <zarezerwowane_siedzenia>
-                    <siedzenie>
-                        <rzad>1</rzad>
-                        <numer_siedzenia>1</numer_siedzenia>
-                    </siedzenie>
-                    <siedzenie>
-                        <rzad>1</rzad>
-                        <numer_siedzenia>2</numer_siedzenia>
-                    </siedzenie>
-                    <siedzenie>
-                        <rzad>1</rzad>
-                        <numer_siedzenia>3</numer_siedzenia>
-                    </siedzenie>
-                </zarezerwowane_siedzenia>
-                <oplacono>true</oplacono>
-            </rezerwacja>
-            <rezerwacja>
-                <seans>3</seans>
-                    <odbierajacy_rezerwacje>2</odbierajacy_rezerwacje>
-                    <typ_rezerwacji>telefoniczna</typ_rezerwacji>
-                    <kontakt>
-                        <osoba plec="m">
-                            <imie>Piotr</imie>
-                            <nazwisko>Frąćżęśi</nazwisko>
-                        </osoba>
-                        <numer_telefonu>432543324</numer_telefonu>
-                    </kontakt>
-                    <zarezerwowane_siedzenia>
-                        <siedzenie>
-                            <rzad>2</rzad>
-                            <numer_siedzenia>8</numer_siedzenia>
-                        </siedzenie>
-                        <siedzenie>
-                            <rzad>2</rzad>
-                            <numer_siedzenia>9</numer_siedzenia>
-                        </siedzenie>
-                        <siedzenie>
-                            <rzad>2</rzad>
-                            <numer_siedzenia>10</numer_siedzenia>
-                        </siedzenie>
-                    </zarezerwowane_siedzenia>
-                    <oplacono>false</oplacono>
-                </rezerwacja>
-                <rezerwacja>
-                    <seans>4</seans>
-                        <odbierajacy_rezerwacje>3</odbierajacy_rezerwacje>
-                        <typ_rezerwacji>internetowa</typ_rezerwacji>
-                        <kontakt>
-                            <osoba plec="k">
-                                <imie>Anna</imie>
-                                <nazwisko>Wesołowska</nazwisko>
-                            </osoba>
-                            <mail>awesolowska@gmail.com</mail>
-                        </kontakt>
-                        <zarezerwowane_siedzenia>
-                            <siedzenie>
-                                <rzad>2</rzad>
-                                <numer_siedzenia>8</numer_siedzenia>
-                            </siedzenie>
-                            <siedzenie>
-                                <rzad>2</rzad>
-                                <numer_siedzenia>9</numer_siedzenia>
-                            </siedzenie>
-                            <siedzenie>
-                                <rzad>2</rzad>
-                                <numer_siedzenia>10</numer_siedzenia>
-                            </siedzenie>
-                        </zarezerwowane_siedzenia>
-                        <oplacono>false</oplacono>
-                    </rezerwacja>
-                </rezerwacje>
-            </kino>
+            <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
+            <typ_rezerwacji>osobista</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="m">
+                    <imie>Adam</imie>
+                    <nazwisko>Nowak</nazwisko>
+                </osoba>
+                <numer_telefonu>321232432</numer_telefonu>
+            </kontakt>
+            <zarezerwowane_siedzenia>
+                <siedzenie>
+                    <rzad>1</rzad>
+                    <numer_siedzenia>1</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>1</rzad>
+                    <numer_siedzenia>2</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>1</rzad>
+                    <numer_siedzenia>3</numer_siedzenia>
+                </siedzenie>
+            </zarezerwowane_siedzenia>
+            <oplacono>true</oplacono>
+        </rezerwacja>
+        <rezerwacja>
+            <seans>3</seans>
+            <odbierajacy_rezerwacje>2</odbierajacy_rezerwacje>
+            <typ_rezerwacji>telefoniczna</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="m">
+                    <imie>Piotr</imie>
+                    <nazwisko>Frąćżęśi</nazwisko>
+                </osoba>
+                <numer_telefonu>432543324</numer_telefonu>
+            </kontakt>
+            <zarezerwowane_siedzenia>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>8</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>9</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>10</numer_siedzenia>
+                </siedzenie>
+            </zarezerwowane_siedzenia>
+            <oplacono>false</oplacono>
+        </rezerwacja>
+        <rezerwacja>
+            <seans>4</seans>
+            <odbierajacy_rezerwacje>3</odbierajacy_rezerwacje>
+            <typ_rezerwacji>internetowa</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="k">
+                    <imie>Anna</imie>
+                    <nazwisko>Wesołowska</nazwisko>
+                </osoba>
+                <mail>awesolowska@gmail.com</mail>
+            </kontakt>
+            <zarezerwowane_siedzenia>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>8</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>9</numer_siedzenia>
+                </siedzenie>
+                <siedzenie>
+                    <rzad>2</rzad>
+                    <numer_siedzenia>10</numer_siedzenia>
+                </siedzenie>
+            </zarezerwowane_siedzenia>
+            <oplacono>false</oplacono>
+        </rezerwacja>
+    </rezerwacje>
+</kino>

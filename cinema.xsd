@@ -1,14 +1,206 @@
-<?xml version="1.0" ?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:element name="pracownik">
-        <xsd:complexType>
-        <xsd:sequence>
-                <xsd:element name="imie" type="xsd:string"/>
-                <xsd:element name="nazwisko" type="xsd:string"/>
-                <xsd:element name="wiek" type="xsd:short"/>
-                <xsd:element name="data_urodzenia" type="xsd:date"/>
-                <xsd:element name="pensja" type="xsd:float"/>
-        </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-</xsd:schema>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="imie" type="xs:string"/>
+  <xs:element name="nazwisko" type="xs:string"/>
+  <xs:element name="osoba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="imie"/>
+        <xs:element ref="nazwisko"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="plec" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gatunek">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:byte" name="id" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tytul">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="eng" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rezyser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="osoba"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dlugosc" type="xs:short"/>
+  <xs:element name="opis" type="xs:string"/>
+  <xs:element name="ocena" type="xs:float"/>
+  <xs:element name="data_premiery" type="xs:date"/>
+  <xs:element name="ograniczenie_wiekowe" type="xs:byte"/>
+  <xs:element name="gatunki">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gatunek" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="film">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="tytul" minOccurs="0"/>
+        <xs:element ref="rezyser" minOccurs="0"/>
+        <xs:element ref="dlugosc" minOccurs="0"/>
+        <xs:element ref="opis" minOccurs="0"/>
+        <xs:element ref="ocena" minOccurs="0"/>
+        <xs:element ref="data_premiery" minOccurs="0"/>
+        <xs:element ref="ograniczenie_wiekowe" minOccurs="0"/>
+        <xs:element ref="gatunki" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="login" type="xs:string"/>
+  <xs:element name="haslo" type="xs:string"/>
+  <xs:element name="dane">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="login"/>
+        <xs:element ref="haslo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pracownik">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="osoba"/>
+        <xs:element ref="dane"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rzad" type="xs:byte"/>
+  <xs:element name="numer_siedzenia" type="xs:byte"/>
+  <xs:element name="siedzenie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rzad"/>
+        <xs:element ref="numer_siedzenia"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nazwa" type="xs:string"/>
+  <xs:element name="typ" type="xs:string"/>
+  <xs:element name="liczba_miejsc" type="xs:byte"/>
+  <xs:element name="siedzenia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="siedzenie" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sala">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="nazwa" minOccurs="0"/>
+        <xs:element ref="typ" minOccurs="0"/>
+        <xs:element ref="liczba_miejsc" minOccurs="0"/>
+        <xs:element ref="siedzenia" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="start_pokazu" type="xs:dateTime"/>
+  <xs:element name="seans">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="film" minOccurs="0"/>
+        <xs:element ref="sala" minOccurs="0"/>
+        <xs:element ref="start_pokazu" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="id" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="numer_telefonu" type="xs:int"/>
+  <xs:element name="odbierajacy_rezerwacje" type="xs:byte"/>
+  <xs:element name="typ_rezerwacji" type="xs:string"/>
+  <xs:element name="kontakt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="osoba"/>
+        <xs:element ref="numer_telefonu" minOccurs="0"/>
+        <xs:element ref="mail" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="zarezerwowane_siedzenia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="siedzenie" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="oplacono" type="xs:string"/>
+  <xs:element name="mail" type="xs:string"/>
+  <xs:element name="rezerwacja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="seans"/>
+        <xs:element ref="odbierajacy_rezerwacje"/>
+        <xs:element ref="typ_rezerwacji"/>
+        <xs:element ref="kontakt"/>
+        <xs:element ref="zarezerwowane_siedzenia"/>
+        <xs:element ref="oplacono"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="filmy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="film" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pracownicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pracownik" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sale_filmowe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sala" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="seanse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="seans" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rezerwacje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rezerwacja" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="kino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="filmy"/>
+        <xs:element ref="gatunki"/>
+        <xs:element ref="pracownicy"/>
+        <xs:element ref="sale_filmowe"/>
+        <xs:element ref="seanse"/>
+        <xs:element ref="rezerwacje"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
