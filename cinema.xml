@@ -1,6 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<?xml-stylesheet type="text/css" href="cinema.css"?>
-<kino>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="cinema.css"?><kino>
     <filmy>
         <film id="1">
             <tytul>Kill Bill</tytul>
@@ -1038,5 +1037,18 @@
             </zarezerwowane_siedzenia>
             <oplacono>false</oplacono>
         </rezerwacja>
-    </rezerwacje>
+    <rezerwacja>
+            <seans>9</seans>
+            <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
+            <typ_rezerwacji>internetowa</typ_rezerwacji>
+            <kontakt>
+                <osoba plec="k">
+                    <imie>Karol</imie>
+                    <nazwisko>BŁzik</nazwisko>
+                </osoba>
+                <mail>krilek@gmail.com</mail>
+            </kontakt>
+            
+            <zarezerwowane_siedzenia><siedzenie><rzad>4</rzad><numer_siedzenia>5</numer_siedzenia></siedzenie></zarezerwowane_siedzenia><oplacono>false</oplacono>
+        </rezerwacja></rezerwacje>
 </kino>
