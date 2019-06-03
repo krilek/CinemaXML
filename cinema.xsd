@@ -1,4 +1,17 @@
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="kino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="filmy"/>
+        <xs:element ref="gatunki"/>
+        <xs:element ref="pracownicy"/>
+        <xs:element ref="sale_filmowe"/>
+        <xs:element ref="seanse"/>
+        <xs:element ref="rezerwacje"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="imie" type="xs:string"/>
   <xs:element name="nazwisko" type="xs:string"/>
   <xs:element name="drugieImie" type="xs:string"/>
@@ -125,8 +138,8 @@
       <xs:attribute type="xs:unsignedLong" name="id" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="numer_telefonu" type="xs:int"/>
-  <xs:element name="odbierajacy_rezerwacje" type="xs:byte"/>
+  <xs:element name="numer_telefonu" type="xs:string"/>
+  <xs:element name="odbierajacy_rezerwacje" type="xs:unsignedLong"/>
   <xs:element name="typ_rezerwacji" type="xs:string"/>
   <xs:element name="kontakt">
     <xs:complexType>
@@ -193,16 +206,5 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="kino">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="filmy"/>
-        <xs:element ref="gatunki"/>
-        <xs:element ref="pracownicy"/>
-        <xs:element ref="sale_filmowe"/>
-        <xs:element ref="seanse"/>
-        <xs:element ref="rezerwacje"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+  
 </xs:schema>

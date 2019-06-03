@@ -1,7 +1,7 @@
 <!ELEMENT kino (filmy,gatunki,pracownicy,sale_filmowe,seanse,rezerwacje)*>
 <!ELEMENT filmy (film)*>
-<!ELEMENT film (tytul,rezyser,dlugosc,opis,ocena,data_premiery,ograniczenie_wiekowe,gatunki)+>
-<!ATTLIST film id CDATA #IMPLIED>
+<!ELEMENT film (#PCDATA|tytul|rezyser|dlugosc|opis|ocena|data_premiery|ograniczenie_wiekowe|gatunki)*>
+<!ATTLIST film id CDATA #REQUIRED>
 <!ELEMENT tytul (#PCDATA)>
 <!ATTLIST tytul eng CDATA #IMPLIED>
 <!ELEMENT rezyser (osoba)>
@@ -16,7 +16,7 @@
 <!ELEMENT ograniczenie_wiekowe (#PCDATA)>
 <!ELEMENT gatunki (gatunek)*>
 <!ELEMENT gatunek (#PCDATA)>
-<!ATTLIST gatunek id CDATA #IMPLIED>
+<!ATTLIST gatunek id CDATA #REQUIRED>
 <!ELEMENT pracownicy (pracownik)*>
 <!ELEMENT pracownik (osoba|dane)*>
 <!ATTLIST pracownik id CDATA #REQUIRED>
@@ -24,8 +24,8 @@
 <!ELEMENT login (#PCDATA)>
 <!ELEMENT haslo (#PCDATA)>
 <!ELEMENT sale_filmowe (sala)*>
-<!ELEMENT sala (nazwa,typ,liczba_miejsc,siedzenia)+>
-<!ATTLIST sala id CDATA #IMPLIED>
+<!ELEMENT sala (#PCDATA|nazwa|typ|liczba_miejsc|siedzenia)*>
+<!ATTLIST sala id CDATA #REQUIRED>
 <!ELEMENT nazwa (#PCDATA)>
 <!ELEMENT typ (#PCDATA)>
 <!ELEMENT liczba_miejsc (#PCDATA)>
@@ -34,11 +34,11 @@
 <!ELEMENT rzad (#PCDATA)>
 <!ELEMENT numer_siedzenia (#PCDATA)>
 <!ELEMENT seanse (seans)*>
-<!ELEMENT seans (film,sala,start_pokazu)*>
-<!ATTLIST seans  id CDATA #IMPLIED>
+<!ELEMENT seans (#PCDATA|film|sala|start_pokazu)*>
+<!ATTLIST seans  id CDATA #REQUIRED>
 <!ELEMENT start_pokazu (#PCDATA)>
 <!ELEMENT rezerwacje (rezerwacja)*>
-<!ELEMENT rezerwacja (seans|odbierajacy_rezerwacje|typ_rezerwacji|kontakt|zarezerwowane_siedzenia|oplacono)*>
+<!ELEMENT rezerwacja (seans,odbierajacy_rezerwacje,typ_rezerwacji,kontakt,zarezerwowane_siedzenia,oplacono)*>
 <!ELEMENT odbierajacy_rezerwacje (#PCDATA)>
 <!ELEMENT typ_rezerwacji (#PCDATA)>
 <!ELEMENT kontakt (osoba|numer_telefonu|mail)*>

@@ -24,6 +24,7 @@ filmy::before{
 
 }
 filmy film{
+    background-color: #eee;
     width:250px;
     border: 1px;
     border-style: solid;

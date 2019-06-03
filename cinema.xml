@@ -17,7 +17,7 @@
             <data_premiery>2003-10-17</data_premiery>
             <ograniczenie_wiekowe>18</ograniczenie_wiekowe>
             <gatunki>
-                <gatunek>1</gatunek>
+                <gatunek id="1">1</gatunek>
             </gatunki>
         </film>
         <film id="2">
@@ -34,7 +34,7 @@
             <data_premiery>1995-05-19</data_premiery>
             <ograniczenie_wiekowe>18</ograniczenie_wiekowe>
             <gatunki>
-                <gatunek>2</gatunek>
+                <gatunek id="2">2</gatunek>
             </gatunki>
         </film>
         <film id="3">
@@ -51,7 +51,7 @@
             <data_premiery>1980-05-23</data_premiery>
             <ograniczenie_wiekowe>18</ograniczenie_wiekowe>
             <gatunki>
-                <gatunek>6</gatunek>
+                <gatunek id="6">6</gatunek>
             </gatunki>
         </film>
         <film id="3">
@@ -68,7 +68,7 @@
             <data_premiery>1990-12-31</data_premiery>
             <ograniczenie_wiekowe>18</ograniczenie_wiekowe>
             <gatunki>
-                <gatunek>5</gatunek>
+                <gatunek id="5">5</gatunek>
             </gatunki>
         </film>
         <film id="4">
@@ -85,7 +85,7 @@
             <data_premiery>2009-09-11</data_premiery>
             <ograniczenie_wiekowe>18</ograniczenie_wiekowe>
             <gatunki>
-                <gatunek>4</gatunek>
+                <gatunek id="4">4</gatunek>
             </gatunki>
         </film>
     </filmy>

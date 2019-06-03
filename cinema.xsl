@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:output encoding="utf-8" />
+<xsl:output encoding="utf-8" indent="yes" />
   <xsl:template match="/">
-    <html>
+    <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+    <html lang="pl">
     <head>
     <title>CinemaXML</title>
     <style>
