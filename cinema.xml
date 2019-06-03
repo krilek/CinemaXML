@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="cinema.css"?><kino>
+<?xml-stylesheet type="text/css" href="cinema.css"?>
+<!DOCTYPE kino SYSTEM "cinema.dtd">
+<kino>
     <filmy>
         <film id="1">
             <tytul>Kill Bill</tytul>
@@ -905,59 +907,59 @@
     </sale_filmowe>
     <seanse>
         <seans id="1">
-            <film>1</film>
-            <sala>1</sala>
+            <film id="1">1</film>
+            <sala id="1">1</sala>
             <start_pokazu>2002-05-30T09:00:00</start_pokazu>
         </seans>
         <seans id="2">
-            <film>1</film>
-            <sala>2</sala>
+            <film id="1">1</film>
+            <sala id="2">2</sala>
             <start_pokazu>2002-05-21T09:00:00</start_pokazu>
         </seans>
         <seans id="3">
-            <film>2</film>
-            <sala>5</sala>
+            <film id="2">2</film>
+            <sala id="5">5</sala>
             <start_pokazu>2002-05-22T09:00:00</start_pokazu>
         </seans>
         <seans id="4">
-            <film>3</film>
-            <sala>6</sala>
+            <film id="3">3</film>
+            <sala id="6">6</sala>
             <start_pokazu>2002-05-25T09:00:00</start_pokazu>
         </seans>
         <seans id="5">
-            <film>4</film>
-            <sala>4</sala>
+            <film id="4">4</film>
+            <sala id="4">4</sala>
             <start_pokazu>2002-05-17T09:00:00</start_pokazu>
         </seans>
         <seans id="6">
-            <film>1</film>
-            <sala>1</sala>
+            <film id="1">1</film>
+            <sala id="1">1</sala>
             <start_pokazu>2002-05-30T09:00:00</start_pokazu>
         </seans>
         <seans id="7">
-            <film>1</film>
-            <sala>3</sala>
+            <film id="1">1</film>
+            <sala id="3">3</sala>
             <start_pokazu>2002-05-21T19:00:00</start_pokazu>
         </seans>
         <seans id="8">
-            <film>2</film>
-            <sala>3</sala>
+            <film id="2">2</film>
+            <sala id="3">3</sala>
             <start_pokazu>2002-05-22T09:00:00</start_pokazu>
         </seans>
         <seans id="9">
-            <film>1</film>
-            <sala>4</sala>
+            <film id="1">1</film>
+            <sala id="4">4</sala>
             <start_pokazu>2001-01-25T18:00:00</start_pokazu>
         </seans>
         <seans id="10">
-            <film>2</film>
-            <sala>5</sala>
+            <film id="2">2</film>
+            <sala id="5">5</sala>
             <start_pokazu>2003-03-17T09:00:00</start_pokazu>
         </seans>
     </seanse>
     <rezerwacje>
         <rezerwacja>
-            <seans>2</seans>
+            <seans id="2">2</seans>
             <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
             <typ_rezerwacji>osobista</typ_rezerwacji>
             <kontakt>
@@ -984,7 +986,7 @@
             <oplacono>true</oplacono>
         </rezerwacja>
         <rezerwacja>
-            <seans>3</seans>
+            <seans id="3">3</seans>
             <odbierajacy_rezerwacje>2</odbierajacy_rezerwacje>
             <typ_rezerwacji>telefoniczna</typ_rezerwacji>
             <kontakt>
@@ -1011,7 +1013,7 @@
             <oplacono>false</oplacono>
         </rezerwacja>
         <rezerwacja>
-            <seans>4</seans>
+            <seans id="4">4</seans>
             <odbierajacy_rezerwacje>3</odbierajacy_rezerwacje>
             <typ_rezerwacji>internetowa</typ_rezerwacji>
             <kontakt>
@@ -1038,7 +1040,7 @@
             <oplacono>false</oplacono>
         </rezerwacja>
     <rezerwacja>
-            <seans>9</seans>
+            <seans id="9">9</seans>
             <odbierajacy_rezerwacje>1</odbierajacy_rezerwacje>
             <typ_rezerwacji>internetowa</typ_rezerwacji>
             <kontakt>

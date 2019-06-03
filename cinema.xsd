@@ -1,20 +1,22 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="imie" type="xs:string"/>
   <xs:element name="nazwisko" type="xs:string"/>
+  <xs:element name="drugieImie" type="xs:string"/>
   <xs:element name="osoba">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="imie"/>
-        <xs:element ref="nazwisko"/>
+        <xs:element ref="imie" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="drugieImie" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="nazwisko" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
-      <xs:attribute type="xs:string" name="plec" use="optional"/>
+      <xs:attribute type="xs:string" name="plec" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="gatunek">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute type="xs:byte" name="id" use="optional"/>
+          <xs:attribute type="xs:unsignedLong" name="id" use="optional"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -37,9 +39,9 @@
   </xs:element>
   <xs:element name="dlugosc" type="xs:short"/>
   <xs:element name="opis" type="xs:string"/>
-  <xs:element name="ocena" type="xs:float"/>
+  <xs:element name="ocena" type="xs:decimal"/>
   <xs:element name="data_premiery" type="xs:date"/>
-  <xs:element name="ograniczenie_wiekowe" type="xs:byte"/>
+  <xs:element name="ograniczenie_wiekowe" type="xs:unsignedByte"/>
   <xs:element name="gatunki">
     <xs:complexType>
       <xs:sequence>
@@ -59,7 +61,7 @@
         <xs:element ref="ograniczenie_wiekowe" minOccurs="0"/>
         <xs:element ref="gatunki" minOccurs="0"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="id" use="optional"/>
+      <xs:attribute type="xs:unsignedLong" name="id" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="login" type="xs:string"/>
@@ -78,11 +80,11 @@
         <xs:element ref="osoba"/>
         <xs:element ref="dane"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="id" use="optional"/>
+      <xs:attribute type="xs:unsignedLong" name="id" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="rzad" type="xs:byte"/>
-  <xs:element name="numer_siedzenia" type="xs:byte"/>
+  <xs:element name="rzad" type="xs:unsignedInt"/>
+  <xs:element name="numer_siedzenia" type="xs:unsignedInt"/>
   <xs:element name="siedzenie">
     <xs:complexType>
       <xs:sequence>
@@ -93,34 +95,34 @@
   </xs:element>
   <xs:element name="nazwa" type="xs:string"/>
   <xs:element name="typ" type="xs:string"/>
-  <xs:element name="liczba_miejsc" type="xs:byte"/>
+  <xs:element name="liczba_miejsc" type="xs:unsignedInt"/>
   <xs:element name="siedzenia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="siedzenie" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="siedzenie" maxOccurs="unbounded" minOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="sala">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:element ref="nazwa" minOccurs="0"/>
-        <xs:element ref="typ" minOccurs="0"/>
-        <xs:element ref="liczba_miejsc" minOccurs="0"/>
-        <xs:element ref="siedzenia" minOccurs="0"/>
+        <xs:element ref="nazwa" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="typ" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="liczba_miejsc" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="siedzenia" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="id" use="optional"/>
+      <xs:attribute type="xs:unsignedLong" name="id" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="start_pokazu" type="xs:dateTime"/>
   <xs:element name="seans">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:element ref="film" minOccurs="0"/>
-        <xs:element ref="sala" minOccurs="0"/>
-        <xs:element ref="start_pokazu" minOccurs="0"/>
+        <xs:element ref="film" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="sala" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="start_pokazu" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
-      <xs:attribute type="xs:byte" name="id" use="optional"/>
+      <xs:attribute type="xs:unsignedLong" name="id" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="numer_telefonu" type="xs:int"/>
