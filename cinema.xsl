@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
+<xsl:output encoding="utf-8" />
   <xsl:template match="/">
     <html>
     <head>
+    <title>CinemaXML</title>
     <style>
     .seans{
       background-color: #98ff98;
@@ -16,12 +16,46 @@
       display: inline-block;
       margin: 2px;
     }
+    .seans:hover{
+      background-color: #FFff98;
+    }
+    .hot{
+      background-color: #EE0000;
+    }
+    .hot:after{
+      color: yellow;
+      content: 'Polecamy!';
+      display: inline-block;
+      margin-left: 3px;
+    }
+   table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
     </style>
     </head>
       <body>
         <h2>Aktualny repertuar</h2>
-        <table border="1">
-          <tr bgcolor="#AAA">
+        <table>
+          <tr>
             <th>Tytuł</th>
             <th>Reżyser</th>
             <th>Opis</th>
@@ -62,19 +96,25 @@
         <h2>Nadchodzące seanse:</h2>
         <xsl:for-each select="kino/seanse/seans">
           <xsl:sort select="start_pokazu"/>
-          <xsl:variable name="date" select="xs:date(concat(substring(date, 7, 4), '-',  substring(date, 4, 2), '-', substring(date, 1, 2)))" />
-          <xsl:if test="start_pokazu[] &gt; 10"> <!-- Mamy rok 2002-01-20 -->
             <div class="seans">
-          </xsl:if>
             <h4>Data pokazu: </h4>
             <p>
               <xsl:value-of select="start_pokazu" />
             </p>
             <h4>Film: </h4>
             <xsl:variable name="film" select="film[text()]" />
-            <p>
-              <xsl:value-of select="/kino/filmy/film[@id=$film]/tytul" />
-            </p>
+            <xsl:choose>
+              <xsl:when test="/kino/filmy/film[@id=$film]/tytul = 'Kill Bill'">
+                <p class="hot">
+                  <xsl:value-of select="/kino/filmy/film[@id=$film]/tytul" />
+                </p>
+              </xsl:when>
+              <xsl:otherwise>
+                <p>
+                  <xsl:value-of select="/kino/filmy/film[@id=$film]/tytul" />
+                </p>
+              </xsl:otherwise>
+            </xsl:choose>
             <h4>Reżyser: </h4>
             <p>
               <xsl:value-of select="/kino/filmy/film[@id=$film]/rezyser/osoba/imie"/>
